@@ -1,0 +1,18 @@
+import pickle
+import sys
+
+a = open('pdf15.pkl','rb')
+b = open('pdf16.pkl','rb')
+c = open('poli15.pkl','rb')
+d = open('pul15.pkl','rb')
+e = open('pul16.pkl','rb')
+f = open('umb15.pkl','rb')
+g = open('umb16.pkl','rb')
+
+m = pickle.load(a)
+n = pickle.load(b)
+o = pickle.load(c)
+p = pickle.load(d)
+q = pickle.load(e)
+r = pickle.load(f)
+s = pickle.load(g)

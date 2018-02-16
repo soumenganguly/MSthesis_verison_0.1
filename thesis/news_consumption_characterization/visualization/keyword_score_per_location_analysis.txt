@@ -1,0 +1,31 @@
+POLI
+# of keywords with score <= 10 : 3130956(93.3508568662%)
+# of keywords with score <= 100 : 161385(4.81176613001%)
+# of keywords with score <= 1000 : 48150(1.43561383747%)
+# of keywords with score <= 10000 : 11832(0.352776384734%)
+# of keywords with score <= 100000 : 1623(0.0483904726524%)
+# of keywords with score <= 1000000 : 20(0.000596308966758%)
+
+PDF
+# of keywords with score <= 10 : 3169177(94.4904331171%)
+# of keywords with score <= 100 : 134012(3.99562786266%)
+# of keywords with score <= 1000 : 39864(1.18856303254%)
+# of keywords with score <= 10000 : 9770(0.291296930261%)
+# of keywords with score <= 100000 : 1133(0.0337809029668%)
+# of keywords with score <= 1000000 : 10(0.000298154483379%)
+
+PUL
+# of keywords with score <= 10 : 3164222(94.3426975706%)
+# of keywords with score <= 100 : 136510(4.0701068526%)
+# of keywords with score <= 1000 : 41493(1.23713239788%)
+# of keywords with score <= 10000 : 10491(0.312793868513%)
+# of keywords with score <= 100000 : 1238(0.0369115250423%)
+# of keywords with score <= 1000000 : 12(0.000357785380055%)
+
+PUL
+# of keywords with score <= 10 : 3212078(95.7695456662%)
+# of keywords with score <= 100 : 104588(3.11833811076%)
+# of keywords with score <= 1000 : 30001(0.894493265585%)
+# of keywords with score <= 10000 : 6731(0.200687782762%)
+# of keywords with score <= 100000 : 565(0.0168457283109%)
+# of keywords with score <= 1000000 : 3(8.94463450136e-05%)

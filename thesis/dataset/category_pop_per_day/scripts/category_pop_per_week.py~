@@ -1,0 +1,12 @@
+import sys
+
+a = open(sys.argv[1],'rb')
+
+b = a.read()
+
+c = b.split('\n')
+
+c.pop(0)
+c.pop(0)
+c.pop(0)
+c.pop(-1)

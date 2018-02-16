@@ -1,0 +1,8 @@
+import pickle
+import sys
+
+keywords_file = open(sys.argv[1],'rb')
+views_file = open(sys.argv[2],'rb')
+
+output_file = open(sys.argv[3],'wb')
+

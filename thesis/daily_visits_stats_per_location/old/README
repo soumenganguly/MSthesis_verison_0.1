@@ -1,0 +1,8 @@
+This folder contains the 'daily visit' statistics from each of the locations from a span of 18 months.
+------------------------------------------------------------------------------------------------------
+
+Inside each year/ folder there is a modified/ directory which has the statistics of visits on a daily basis. The missing days are added with a `view` score of 0.
+It is useful for analysis on a daily or weekly basis.
+
+
+Hope it helps! 

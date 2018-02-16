@@ -1,0 +1,8 @@
+import sys
+import pickle
+
+input_file = open(sys.argv[1],'rb')
+output_file = open(sys.atgv[2],'wb')
+
+results = pickle.load(input_file)
+

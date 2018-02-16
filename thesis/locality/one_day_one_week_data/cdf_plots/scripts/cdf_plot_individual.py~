@@ -1,0 +1,97 @@
+from __future__ import division
+import pickle
+import sys
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import ks_2samp
+
+a=open(sys.argv[1],'rb')
+b = open(sys.argv[2],'rb')
+c = open(sys.argv[3],'rb')
+
+p1=pickle.load(a)
+p2 = pickle.load(b)
+p3 = pickle.load(c)
+
+x_i = []
+y_i = []
+x_j = []
+y_j = []
+x_k = []
+y_k = []
+
+for word in p1:
+    if p1[word][0] <=10 and p1[word][1] <=10:
+        continue
+    else:
+        x_i.append(p1[word][0])
+        y_i.append(p1[word][1])
+for word in p2:
+    if p2[word][0] <=10 and p2[word][1] <=10:
+        continue
+    else:
+        x_j.append(p2[word][0])
+        y_j.append(p2[word][1])
+for word in p3:
+    if p3[word][0] <=10 and p3[word][1] <=10:
+        continue
+    else:
+        x_k.append(p3[word][0])
+        y_k.append(p3[word][1])
+
+
+x_y_i = [] # Different location
+x_y_j = [] # Different samples from same location 1
+x_y_k = [] # Different samples from same location 2
+
+for score in range(len(x_j)):
+    if x_j[score] == 0 and y_j[score] != 0:
+        x_j[score] = 1
+    elif y_j[score] == 0 and x_j[score]!= 0:
+        y_j[score] = 1
+    x_y_j.append(x_j[score]/y_j[score])
+
+for score in range(len(x_k)):
+    if x_k[score] == 0 and y_k[score] != 0:
+        x_k[score] = 1
+    elif y_k[score] == 0 and x_k[score] != 0:
+        y_k[score] = 1
+    x_y_k.append(x_k[score]/y_k[score])
+
+for score in range(len(x_i)):
+    if x_i[score] == 0 and y_i[score] != 0:
+        x_i[score] = 1
+    elif y_i[score] == 0 and x_i[score]!= 0:
+        y_i[score] = 1
+    x_y_i.append(x_i[score]/y_i[score])
+
+sorted_data_i = np.sort(x_y_i)
+sorted_data_j = np.sort(x_y_j)
+sorted_data_k = np.sort(x_y_k)
+
+yvals_i=np.arange(len(sorted_data_i))/float(len(sorted_data_i)-1)
+yvals_j = np.arange(len(sorted_data_j))/float(len(sorted_data_j)-1)
+yvals_k = np.arange(len(sorted_data_k))/float(len(sorted_data_k)-1)
+
+diff_location_ks = ks_2samp(x_y_i, x_y_j)
+same_location_ks = ks_2samp(x_y_j, x_y_k)
+
+print diff_location_ks
+print same_location_ks
+
+plt.plot(sorted_data_i,yvals_i, label='City_2_Resi vs. City_1_Campus')
+plt.plot(sorted_data_j,yvals_j, label='City_2_Resi vs. City_2_Resi')
+plt.plot(sorted_data_k,yvals_k, label='City_1_Campus vs. City_1_Campus ')
+
+# plt.annotate('p-value = '+str(diff_location_ks[1]),xy=(0.005,0.6))
+# plt.annotate('p-value = '+str(same_location_ks[1]),xy=(10,0.6))
+
+plt.legend()
+
+plt.grid()
+
+plt.xlabel('Popularity of keywords')
+plt.ylabel('CDF')
+plt.xscale('log')
+
+plt.show()

@@ -1,0 +1,5 @@
+import sys
+
+input_file = open(sys.argv[1],'rb')
+
+file_read = input_file.read()

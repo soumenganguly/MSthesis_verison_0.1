@@ -1,0 +1,9 @@
+import pickle
+import sys
+
+a = open(sys.argv[1],'rb')
+output = open(sys.argv[2],'wb')
+
+
+p = pickle.load(a)
+
